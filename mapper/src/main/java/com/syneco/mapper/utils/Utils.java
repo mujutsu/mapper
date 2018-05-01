@@ -1,40 +1,38 @@
 package com.syneco.mapper.utils;
 
+import static com.syneco.mapper.utils.Constants.APRIL;
+import static com.syneco.mapper.utils.Constants.AUGUST;
+import static com.syneco.mapper.utils.Constants.DASH;
+import static com.syneco.mapper.utils.Constants.DATE_FORMAT;
+import static com.syneco.mapper.utils.Constants.DATE_SUFFIX;
+import static com.syneco.mapper.utils.Constants.DECEMBER;
+import static com.syneco.mapper.utils.Constants.EMPTY_STRING;
+import static com.syneco.mapper.utils.Constants.FEBRUARY;
+import static com.syneco.mapper.utils.Constants.JANUARY;
+import static com.syneco.mapper.utils.Constants.JULY;
+import static com.syneco.mapper.utils.Constants.JUNE;
+import static com.syneco.mapper.utils.Constants.MARCH;
+import static com.syneco.mapper.utils.Constants.MAY;
+import static com.syneco.mapper.utils.Constants.MONTH;
+import static com.syneco.mapper.utils.Constants.MONTH_STRING_LENGTH;
+import static com.syneco.mapper.utils.Constants.NOVEMBER;
+import static com.syneco.mapper.utils.Constants.OCTOBER;
+import static com.syneco.mapper.utils.Constants.QUARTER;
+import static com.syneco.mapper.utils.Constants.QUARTER_STRING_LENGTH;
+import static com.syneco.mapper.utils.Constants.SEASON;
+import static com.syneco.mapper.utils.Constants.SEASON_STRING_LENGTH;
+import static com.syneco.mapper.utils.Constants.SEPTEMBER;
+import static com.syneco.mapper.utils.Constants.SLASH;
+import static com.syneco.mapper.utils.Constants.SUMMER;
+import static com.syneco.mapper.utils.Constants.VALID_NUMBER_OF_ARRAY_ELEMENTS;
+import static com.syneco.mapper.utils.Constants.WINTER;
+import static com.syneco.mapper.utils.Constants.YEAR_STRING_LENGTH;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
 public class Utils {
-
-	private static final String EMPTY_STRING = "";
-
-	private static final String DATE_FORMAT = "yyyyMMdd";
-
-	private static final String DATE_SUFFIX = "0101";
-
-	private static final String DASH = "-";
-
-	private static final String SLASH = "/";
-
-	private static final String WINTER = "Win";
-
-	private static final String SUMMER = "Sum";
-
-	private static final String QUARTER = "Q";
-
-	private static final String SEASON = "SWS";
-
-	private static final String MONTH = "M";
-
-	private static final int VALID_NUMBER_OF_ARRAY_ELEMENTS = 3;
-
-	private static final int QUARTER_STRING_LENGTH = 8;
-
-	private static final int SEASON_STRING_LENGTH = 11;
-
-	private static final int MONTH_STRING_LENGTH = 9;
-
-	private static final int YEAR_STRING_LENGTH = 4;
 
 	public static Boolean isValidYearString(String string) {
 
@@ -115,6 +113,7 @@ public class Utils {
 	}
 
 	static boolean isValidMonth(String string) {
+
 		Integer month = null;
 		try {
 			month = Integer.parseInt(string.trim());
@@ -158,33 +157,32 @@ public class Utils {
 
 		switch (monthNumber) {
 		case 1:
-			return "Jan";
+			return JANUARY;
 		case 2:
-			return "Feb";
+			return FEBRUARY;
 		case 3:
-			return "Mar";
+			return MARCH;
 		case 4:
-			return "Apr";
+			return APRIL;
 		case 5:
-			return "May";
+			return MAY;
 		case 6:
-			return "Jun";
+			return JUNE;
 		case 7:
-			return "Jul";
+			return JULY;
 		case 8:
-			return "Aug";
+			return AUGUST;
 		case 9:
-			return "Sep";
+			return SEPTEMBER;
 		case 10:
-			return "Oct";
+			return OCTOBER;
 		case 11:
-			return "Nov";
+			return NOVEMBER;
 		case 12:
-			return "Dec";
+			return DECEMBER;
 		default:
 			return EMPTY_STRING;
 		}
-
 	}
 
 	static String getSeasonFromMonthNumber(String monthString) {
@@ -210,7 +208,6 @@ public class Utils {
 		default:
 			return EMPTY_STRING;
 		}
-
 	}
 
 	public static Boolean isStringNotNullAndNotEmpty(String string) {
